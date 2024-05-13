@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>to do list</h1>
+      </header>
+      <section>
+        <form action="/add" method="post">
+          <label for="task">task</label>
+          <input type="text" name="task" />
+          <button>add task</button>
+        </form>
+      </section>
+      <section>
+        <table>
+          <thead>
+            <th>id</th>
+            <th>task</th>
+            <th>delete</th>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </section>
+      <section id="tests"></section>
+    </main>
+  </body>
+  <script src="./public/js/getData.js" type="module"></script>
+</html>
