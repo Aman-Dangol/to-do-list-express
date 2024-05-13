@@ -3,6 +3,7 @@ const { conn } = require("./dbConnect");
 
 const app = express();
 
+app.use(express.json());
 app.use("/public", express.static("./public"));
 app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
@@ -21,8 +22,13 @@ app.get("/getTasks", (req, res) => {
 
 app.post("/add", (req, res) => {
   let { task } = req.body;
-  console.log(task);
   conn.query(`insert into lists(task) values('${task}')`);
   res.redirect("/");
+});
+
+app.delete("/delete", (req, res) => {
+  let { id } = req.body;
+  conn.query(`delete  from lists where id = ${id}`);
+  res.send();
 });
 app.listen(8000);

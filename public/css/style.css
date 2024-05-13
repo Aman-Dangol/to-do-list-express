@@ -9,12 +9,10 @@ h1 {
 table,
 table * {
   border: 1px solid black;
-}
-
-table {
   border-collapse: collapse;
+  padding: 4px;
 }
 
-table * {
-  padding: 4px;
+button {
+  border: none;
 }

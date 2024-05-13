@@ -2,7 +2,8 @@ import { deleteBtn } from "./deletebtn.js";
 
 let tbody = document.getElementById("tbody");
 
-async function getdata() {
+export async function getData() {
+  tbody.innerHTML = "";
   let response = await fetch("/getTasks");
   let data = await response.json();
   data.forEach((row) => {
@@ -11,11 +12,15 @@ async function getdata() {
     tdId.innerHTML = row.id;
     let tdTasks = document.createElement("td");
     tdTasks.innerText = row.task;
+    let Tdel = document.createElement("td");
+    let delbtn = deleteBtn();
+    delbtn.id = row.id;
+    Tdel.appendChild(delbtn);
     Trow.appendChild(tdId);
     Trow.appendChild(tdTasks);
-    Trow.appendChild(deleteBtn());
+    Trow.appendChild(Tdel);
     tbody.appendChild(Trow);
   });
 }
 
-getdata();
+getData();
