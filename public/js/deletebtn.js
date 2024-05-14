@@ -4,6 +4,7 @@ export const deleteBtn = () => {
   let btn = document.createElement("button");
   btn.innerText = "delete";
   btn.onclick = removeTask;
+  btn.className = "deleteBtn";
   return btn;
 };
 

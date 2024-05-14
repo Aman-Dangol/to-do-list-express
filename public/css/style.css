@@ -16,3 +16,36 @@ table * {
 button {
   border: none;
 }
+
+/* section ko kaam */
+
+section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+/* all btn styling */
+
+button,
+.editBtn {
+  color: white;
+  padding: 4px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+/* insert button styling */
+
+.insert {
+  background-color: green;
+}
+
+.deleteBtn {
+  background-color: red;
+}
+
+.editBtn {
+  display: inline-block;
+  background-color: blue;
+  text-decoration: none;
+}

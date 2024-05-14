@@ -3,15 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css" />
     <title>edit</title>
   </head>
   <body>
-    <form action="/update" method="post">
-      <label for="name">name</label>
-      <input type="text" id="id" name="id" hidden />
-      <input type="text" id="input" name="name" />
-      <button>update</button>
-    </form>
+    <main>
+      <header><h1>To Do List</h1></header>
+      <section>
+        <form action="/update" method="post">
+          <label for="name">name</label>
+          <input type="text" id="id" name="id" hidden />
+          <input type="text" id="input" name="name" />
+          <button class="insert">update</button>
+        </form>
+      </section>
+    </main>
   </body>
   <script src="/public/js/edit.js" type="module"></script>
 </html>
