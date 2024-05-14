@@ -31,4 +31,29 @@ app.delete("/delete", (req, res) => {
   conn.query(`delete  from lists where id = ${id}`);
   res.send();
 });
+
+app.get("/edit/:id", (req, res) => {
+  res.sendFile(`${__dirname}/editpage.html`);
+});
+
+app.get("/getdata", (req, res) => {
+  const { id } = req.query;
+  conn.query(
+    `select * from lists where lists.id = ${id}`,
+    (err, data, field) => {
+      if (err) {
+        res.send("err");
+        return;
+      }
+      console.log(data);
+      res.json(data);
+    }
+  );
+});
+
+app.post("/update", (req, res) => {
+  const { id, name } = req.body;
+  conn.query(`update lists set lists.task='${name}' where lists.id = ${id}`);
+  res.redirect("/");
+});
 app.listen(8000);
